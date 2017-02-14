@@ -516,7 +516,7 @@ namespace LetsEncrypt.SiteExtension.Core
                 Directory.CreateDirectory(directory);
             }
             var webConfigPath = Path.Combine(directory, "web.config");
-            if (!File.Exists(webConfigPath) || File.ReadAllText(webConfigPath) != webConfig)
+            if (!File.Exists(webConfigPath))// || File.ReadAllText(webConfigPath) != webConfig)
             {
                 Trace.TraceInformation($"Writing web.config to {webConfigPath}");
                 File.WriteAllText(webConfigPath, webConfig);
